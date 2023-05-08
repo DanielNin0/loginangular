@@ -1,0 +1,849 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700;900&display=swap');
+*{
+    font-family: 'Work Sans', sans-serif;
+}
+
+.detailt-descripcion{
+    font-weight: 500;
+}
+
+.picbg::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+   
+    background-image: radial-gradient(farthest-side at 70% 30%, transparent, rgb(23, 24, 28));
+
+}
+.fa-house{
+    margin-right: 10px;
+}
+.fa-magnifying-glass{
+    margin-right: 10px;
+}
+.fa-list{
+    margin-right: 10px;
+}
+
+.detail-tag{
+    background-color: #696969 !important;
+}
+
+
+
+.btn-play{
+    margin-right: 1rem;
+    border: none !important;
+    background: linear-gradient(85deg, rgb(255, 115, 0), rgb(231, 136, 72));
+    transition: .2s ease;
+}
+
+
+.btn-play:hover{
+    background: linear-gradient(85deg, rgb(231, 136, 72), rgb(221, 153, 97));
+}
+
+.btn-play-trailer{
+    margin-right: 1rem;
+}
+.btn-play-trailer i{
+    color: #ffff;
+}
+.btn-play-list i{
+    color: #ffff;
+}
+
+.btn-play-trailer:hover i, .btn-play-list:hover i{
+    color:black;
+}
+
+/*--------------------CAPITULOS------------------*/
+.capitulos{
+    text-align: right;
+    
+}
+.estatus{
+    pointer-events: none;
+}
+.btn-temporadas{
+    margin-bottom: 16px;
+    border: none !important;
+    background: linear-gradient(85deg, rgb(255, 115, 0), rgb(231, 136, 72));
+    transition: .2s ease;
+   
+
+}
+
+.btn-temporadas:hover{
+    background: linear-gradient(85deg, rgb(231, 136, 72), rgb(221, 153, 97));
+}
+
+.card-min-cap{
+    position: relative;
+    width: auto;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    overflow: hidden;
+    margin-top: 5px;
+    margin-left: 2px;
+    margin-bottom: 5px;
+    transition: .1s ease;
+    user-select: none;
+    
+}
+
+
+.card-min-cap .card-min-button{
+    z-index:99;
+    position: absolute;
+    color: #ffffff;
+    opacity: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: .2s ease;
+    
+}
+
+.card-min-cap .card-min-button  i{
+    text-decoration: none;
+    color: #ffffff;
+    transition: .2s ease;
+}
+
+.card-min-cap .card-min-button i{
+   z-index: 99;
+    font-size: 25px;
+}
+.card-min-cap .cap-duracion{
+    z-index: 99;
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    color: #ffffff;
+    opacity: 0;
+    font-size: 15px;
+    font-weight: 400;
+    pointer-events: none;
+    text-shadow: 6px 2px 3px rgba(0,0,0,0.6);
+    transition: .3s ease;
+    
+}
+.card-min-cap:hover .cap-duracion{
+    opacity: 1;
+}
+
+.card-min-cap .pic img{
+    z-index: 100;
+    width: auto;
+    height: auto;
+   border-radius: 14px;
+   pointer-events: none;
+   user-select: none;
+   
+}
+
+
+.card-min-cap:hover .card-min-button{
+    opacity: 1;
+}
+
+
+.card-min-cap:hover .pic{
+    opacity: 0.3;
+    filter: brightness(0.6);
+}
+
+.card-min-cap:hover{
+    outline: 2px solid #FFFFFF;
+outline-offset: 0px;
+    
+}
+
+.progreso-bar {
+    
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #f78c01;
+    transition: .3s ease;
+    /* Configura los estilos de la barra de progreso aquí */
+  }
+
+
+
+.progreso-bar .progreso {
+    background-color: #1e87f0;
+  }
+
+.carousel{
+    user-select: none;
+}
+.tns-controls button {
+    margin-top: -40px !important;
+    background: transparent !important;
+}
+.cap-title{
+    font-size: 14px;
+}
+
+
+.divider{
+    color: #494d58;
+    width: 15%;
+    margin: 0 auto;
+    height: 5px !important;
+    border-width: 0;
+    background-color: #494d58;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.cap-comment{
+    width: 100%;
+    height: 10rem;
+    background-color: #2d2f34;
+    color: white;
+    border-radius: 12px;
+    border: 3px solid #777c8a !important;
+    resize: none;
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
+.cap-comment-user{
+    width: 100%;
+    height: auto;
+    background-color: #2d2f34;
+    color: white;
+    border-radius: 12px;
+    font-weight: 300;
+}
+
+.cap-comment-like i{
+    cursor: pointer;
+
+}
+
+.verresenas{
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 15px;
+    margin-top: 1rem;
+}
+/* ----------------------------- CARD MINI EMPIEZA---------------------------------------- */
+.card-min{
+    position: relative;
+    width: auto;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    overflow: hidden;
+    margin-top: 5px;
+    margin-left: 2px;
+    margin-bottom: 5px;
+    transition: .1s ease;
+    user-select: none;
+}
+.card-min h2{
+    z-index: 99;
+    position: absolute;
+    top: 12px; 
+    left: 15px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    opacity: 0;
+    pointer-events: none;
+    transition: .2s ease;
+    text-shadow: 6px 2px 3px rgba(0,0,0,0.6);
+    
+}
+.card-min .type{
+    z-index: 99;
+    position: absolute;
+    top: 32px;
+    left: 15px;
+    color: #ffffff;
+    opacity: 0;
+    font-size: 12px;
+    font-weight: 300;
+    pointer-events: none;
+    text-shadow: 6px 2px 3px rgba(0,0,0,0.6);
+    transition: .2s ease;
+}
+.card-min .calificacion{
+    z-index: 99;
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    color: #ffffff;
+    opacity: 0;
+    font-size: 15px;
+    font-weight: 400;
+    pointer-events: none;
+    text-shadow: 6px 2px 3px rgba(0,0,0,0.6);
+    transition: .3s ease;
+    
+}
+
+.card-min .card-min-button{
+    z-index:99;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    color: #ffffff;
+    opacity: 0;
+    transition: .3s ease;
+    
+}
+
+.card-min .card-min-button a i{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.card-min .card-min-button i{
+   z-index: 99;
+    margin-left: 8px;
+}
+
+.card-min .pic img{
+   transition: .3s ease;
+   z-index: 100;
+    width: auto;
+    height: auto;
+   border-radius: 14px;
+   pointer-events: none;
+   user-select: none;
+}
+
+.card-min:hover h2{
+    opacity: 1;
+}
+
+.card-min:hover .type{
+    opacity: 1;
+}
+.card-min:hover .calificacion{
+    opacity: 1;
+}
+.card-min:hover .card-min-button{
+    opacity: 1;
+}
+
+
+.card-min:hover .pic{
+    opacity: 0.3;
+    filter: brightness(0.6);
+}
+
+.card-min:hover{
+    outline: 2px solid #FFFFFF;
+outline-offset: 0px;
+    
+}
+
+
+/* ----------------------------- CARD MINI TERMINA---------------------------------------- */
+
+/* ----------------------------- CARD  EMPIEZA---------------------------------------- */
+@media screen and (max-width: 480px) {
+    .card{
+      width: 21rem !important;
+    }
+  }
+.card{
+    width: auto;
+    height: auto;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    overflow: hidden;
+    margin-top: 5px;
+    margin-left: 2px;
+    margin-bottom: 5px;
+    transition: .1s ease;
+    user-select: none;
+   
+}
+.card h2{
+    z-index: 99;
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    opacity: 0;
+    pointer-events: none;
+    transition: .2s ease;
+    text-shadow: 6px 2px 3px rgba(0,0,0,0.6);
+    
+}
+.card .type{
+    z-index: 99;
+    position: absolute;
+    top: 32px;
+    left: 15px;
+    color: #ffffff;
+    opacity: 0;
+    font-size: 12px;
+    font-weight: 300;
+    pointer-events: none;
+    text-shadow: 6px 2px 3px rgba(0,0,0,0.6);
+    transition: .2s ease;
+}
+.card .calificacion{
+    z-index: 99;
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    color: #ffffff;
+    opacity: 0;
+    font-size: 15px;
+    font-weight: 400;
+    pointer-events: none;
+    text-shadow: 6px 2px 3px rgba(0,0,0,0.6);
+    transition: .3s ease;
+}
+
+.card .card-button{
+    z-index:99;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    color: #ffffff;
+    opacity: 0;
+    transition: .3s ease;
+    
+}
+
+.card .card-button a i{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.card .card-button i{
+   z-index: 99;
+    margin-left: 8px;
+}
+
+.card .pic img{
+    z-index: 100;
+    width: auto;
+    height: auto;
+   background:url('img/kimetsu-bg.webp') center / cover;
+   border-radius: 12px;
+   transition: .3s ease;
+}
+
+.card:hover{
+    outline: 2px solid #FFFFFF;
+outline-offset: 0px;
+    
+}
+
+.card:hover h2{
+    opacity: 1;
+}
+
+.card:hover .type{
+    opacity: 1;
+}
+.card:hover .calificacion{
+    opacity: 1;
+}
+.card:hover .card-button{
+    opacity: 1;
+}
+
+
+.card:hover .pic{
+    opacity: 0.3;
+    filter: brightness(0.6);
+}
+
+/* ----------------------------- CARD  TERMINA---------------------------------------- */
+
+/* ----------------------------- CARD LARGO EMPIEZA---------------------------------------- */
+
+.card-lg{
+    width: auto;
+    height: 348px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    overflow: hidden;
+    margin-top: 5px;
+    margin-left: 2px;
+    margin-bottom: 5px;
+    transition: .1s ease;
+    user-select: none;
+}
+
+
+.card-lg h2{
+    z-index: 99;
+    position: absolute;
+    top: 12px; 
+    left: 15px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    opacity: 0;
+    pointer-events: none;
+    transition: .2s ease;
+    text-shadow: 6px 2px 3px rgba(0,0,0,0.6);
+    
+}
+.card-lg .type{
+    z-index: 99;
+    position: absolute;
+    top: 32px;
+    left: 15px;
+    color: #ffffff;
+    opacity: 0;
+    font-size: 12px;
+    font-weight: 300;
+    pointer-events: none;
+    text-shadow: 6px 2px 3px rgba(0,0,0,0.6);
+    transition: .2s ease;
+}
+.card-lg .calificacion{
+    z-index: 99;
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    color: #ffffff;
+    opacity: 0;
+    font-size: 15px;
+    font-weight: 400;
+    pointer-events: none;
+    text-shadow: 6px 2px 3px rgba(0,0,0,0.6);
+    transition: .3s ease;
+}
+
+.card-lg .card-lg-button{
+    z-index:99;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    color: #ffffff;
+    opacity: 0;
+    transition: .3s ease;
+}
+
+.card-lg .card-lg-button a i{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.card-lg .card-lg-button i{
+   z-index: 99;
+    margin-left: 8px;
+}
+
+.card-lg .pic img{
+    z-index: 100;
+    width: 250px;
+    height: 348px;
+   background:url('img/kimetsu-bg.webp') center / cover;
+   border-radius: 12px;
+   transition: .3s ease;
+   
+}
+
+.card-lg:hover h2{
+    opacity: 1;
+}
+
+.card-lg:hover .type{
+    opacity: 1;
+}
+.card-lg:hover .calificacion{
+    opacity: 1;
+}
+.card-lg:hover .card-lg-button{
+    opacity: 1;
+}
+
+
+.card-lg:hover .pic{
+    opacity: 0.3;
+    filter: brightness(0.6);
+}
+
+
+.card-lg:hover{
+    outline: 2px solid #FFFFFF;
+outline-offset: 0px;
+    
+}
+
+
+
+/* ----------------------------- CARD LARGO TERMINA---------------------------------------- */
+
+
+.slider-principal .tns-outer button{
+    opacity: 0;
+    display: none;
+}
+
+/* #tns1 > .tns-item{
+    padding-right: 0 !important;
+} */
+
+.carousel-caption {
+    top: 6rem !important;
+    text-align:left !important;
+}
+.carousel-description{
+    text-shadow: 5px 6px 4px #2d2f34;
+}
+.carousel-item{
+    transition: transform 6s ease;
+}
+.carousel-movil{
+    top: 9rem !important;
+}
+
+.coleccion .tns-controls button {
+    margin-top: -10px !important;
+    background: transparent !important;
+}
+
+
+/* ----------------------------- CARD MIN CATEGORIA EMPIEZA---------------------------------------- */
+.card-min-category{
+    position: relative;
+    width: auto;
+    height: auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    outline: 2px solid #696969;
+    outline-offset: 0px;
+    transition: .2s ease;
+    margin-top: 5px;
+    margin-left: 2px;
+    margin-bottom: 5px;
+}
+.card-min-category h2{
+    z-index: 99;
+    position: absolute;
+    bottom: 0; 
+    left: 15px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    pointer-events: none;
+    transition: .2s ease;
+    text-shadow: 6px 2px 3px rgba(0,0,0,0.6);
+    
+    
+}
+
+
+
+.card-min-category .pic img{
+    z-index: 100;
+    width: auto;
+    height: auto;
+    background-image:  linear-gradient(to bottom, rgba(245, 246, 252, 0), rgb(59, 59, 59)),url('img/kimetsu-bg.webp') ;
+    background-position: center;
+    background-size: cover;
+   transition: .3s ease;
+   opacity: 0.9;
+   filter: brightness(0.7);
+}
+
+
+
+.card-min-category:hover .pic img{
+    transform: scale(1.2);
+   
+}
+
+.card-min-category:hover{
+outline: 2px solid #FFFFFF;
+outline-offset: 0px;
+    
+}
+
+/* ----------------------------- CARD MIN CATEGORIA TERMINA---------------------------------------- */
+
+.category-card{
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    outline: 2px solid #696969;
+    outline-offset: 0px;
+    border-radius: 12px;
+    
+}
+
+.category-card h2{
+    z-index: 99;
+    position: absolute;
+    top: 1rem; 
+    left: 15px;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 700;
+    pointer-events: none;
+    transition: .2s ease;
+    text-shadow: 6px 2px 3px rgba(0,0,0,0.6);
+    
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    text-shadow: none !important;
+}
+
+.category-card-list{
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    outline: 2px solid #696969;
+    outline-offset: 0px;
+    border-radius: 12px;
+    transition: .3s ease;
+}
+.list-title{
+    z-index: 99;
+    position: absolute;
+    top: 12px; 
+    left: 15px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    opacity: 0;
+    
+    transition: .2s ease;
+    text-shadow: 6px 2px 3px rgba(0,0,0,0.6);
+}
+
+.category-card-list .type{
+    z-index: 99;
+    position: absolute;
+    top: 32px;
+    left: 15px;
+    color: #ffffff;
+    opacity: 0;
+    font-size: 12px;
+    font-weight: 300;
+    pointer-events: none;
+    text-shadow: 6px 2px 3px rgba(0,0,0,0.6);
+    transition: .2s ease;
+}
+
+.category-card-list .calificacion{
+    z-index: 99;
+    position: absolute;
+    bottom: 0px;
+    left: 15px;
+    color: #ffffff;
+    opacity: 0;
+    font-size: 15px;
+    font-weight: 400;
+    pointer-events: none;
+    text-shadow: 6px 2px 3px rgba(0,0,0,0.6);
+    transition: .3s ease;
+}
+
+.category-card-list .card-min-button{
+    z-index:99;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    color: #ffffff;
+    opacity: 0;
+    transition: .3s ease;
+}
+
+.category-card-list .card-min-button a i{
+    text-decoration: none;
+    color: #ffffff;
+    z-index: 99;
+    margin-left: 8px;
+}
+
+.category-card-list-img{
+    
+    transform: none !important;
+}
+
+.category-card-list:hover {
+    outline: 2px solid #FFFFFF;
+outline-offset: 0px;
+}
+
+.category-card-list:hover .list-title{
+    opacity: 1;
+}
+.category-card-list:hover .type{
+    opacity: 1;
+}
+.category-card-list:hover .calificacion{
+    opacity: 1;
+}
+
+.category-card-list:hover .card-min-button{
+    opacity: 1;
+}
+.category-card-list:hover .category-card-list-img{
+    opacity: 0.3;
+    filter: brightness(0.6);
+}
+
+.admin-list{
+    background-color: #ffffff00 !important;
+    border: 1px solid #fff !important;
+    transition: .2s ease;
+}
+.admin-list:hover{
+    background-color: #fff !important;
+
+}
+
+.admin-list:hover span{
+    color: #2d2f34;
+}
+
+/* --------------------------------------Login---------------------------------------------- */
+
+.logologin{
+    width: 130px;
+}
+.input-login{
+    background-color: #2d2f34 !important;
+   color: #fff !important;
+   min-height: 3.123rem !important;
+   line-height: initial;
+}
+
+.imglogin {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit:cover;
+    
+  }
+  
+
+.input-login:focus{
+   box-shadow: none !important;
+  
+}
+.btn-login{
+    background: linear-gradient(85deg, rgb(255, 115, 0), rgb(231, 136, 72)) !important;
+    border: none !important;
+}
+.btn-login:hover{
+    background: linear-gradient(85deg, rgb(231, 136, 72), rgb(255, 115, 0)) !important
+}
+.text-login:hover{
+    background-color: #2d2f34 !important;
+}

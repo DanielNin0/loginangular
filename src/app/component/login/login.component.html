@@ -1,0 +1,51 @@
+<section>
+    <div class="row g-0">
+      <div class="col-lg-7 d-none d-lg-block min-vh-100">
+        <div>
+           <img src="assets/img/portadalogin.png" alt="" class="imglogin min-vh-100">
+        </div>
+       
+      </div>
+      <div class="col-lg-5 d-flex flex-column align-items-end min-vh-100">
+        <div class="px-lg-5 pt-lg-4 pb-lg-3 p-4 w-100 mb-auto">
+          <img src="assets/img/Logo.png" alt="" class="img-fluid logologin">
+        </div>
+        <div class="px-lg-4 py-lg-4 p-4 w-100 align-self-center">
+          <h1 class="text-white fw-lighter">Bienvenido</h1>
+          <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label fw-bolder text-white">Email address</label>
+              <input type="email" class="form-control form-control-sm input-login border-0" id="exampleInputEmail1" formControlName="usuario" placeholder="Ingresa tu email" [class.is-invalid]="validar.usuario.errors && validar.usuario.touched " >
+              <div id="validationServerUsernameFeedback" class="invalid-feedback"> 
+                <p > Usuario obligatorio </p>
+                
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label fw-bolder text-white">Password</label>
+              <input type="password" class="form-control form-control-sm input-login border-0" id="exampleInputPassword1" formControlName="password" placeholder="Ingresa tu contraseña" [class.is-invalid]="validar.password.errors && validar.password.touched">
+              <div id="validationServerUsernameFeedback" class="invalid-feedback"> 
+                <p>Contraseña obligatoria</p>
+              </div>
+              <a href="#"  class="form-text">¿Has olvidado tu contraseña?</a>
+            </div>
+            <div class="alert alert-danger" role="alert" *ngIf="errorStatus">
+             <strong>Ups!</strong> {{errormsg}}
+            </div>
+           
+            <button type="submit" class="btn btn-sm btn-login btn-primary w-100 fw-bolder" >Iniciar sesión</button>
+          </form>
+
+          <p class="fw-bolder text-white-50 text-center mt-2">O inicia sesión con</p>
+          <div class="d-flex justify-content-around w-100">
+            <button type="submit" class="btn btn-sm  btn-outline-light flex-grow-1 me-2 text-login text-white" ><i class="fa-brands fa-google"></i> Google</button>
+            <button type="submit" class="btn btn-sm btn-outline-light flex-grow-1 ms-2 text-login text-white" ><i class="fa-brands fa-facebook"></i> Facebook</button>
+          </div>
+        </div>
+        <div class="text-center text-white px-lg-5 pt-lg-3 pb-lg-4 p-4 w-100 mt-auto">
+          <p>¿Aun no tienes cuenta? <a href="#" class="text-decoration-none fw-bolder text-white text-orange-hover ">Crea una ahora</a></p>
+        </div>
+      </div>
+      
+    </div>
+  </section>
