@@ -22,7 +22,11 @@ export class LoginComponent {
   errorStatus:boolean =false;
   errormsg:any = "";
 
-  ngOnInit(): void{ }
+  ngOnInit(): void{ 
+   this.checkLocalStorage();
+  }
+
+
 
   onLogin(form:LoginI){
     if(this.loginForm.invalid){
@@ -46,6 +50,12 @@ export class LoginComponent {
 
   public get validar():any{
     return this.loginForm.controls;
+  }
+
+  checkLocalStorage(){
+    if(localStorage.getItem('token')){
+      this.router.navigate(['index']);
+    }
   }
 
 }
