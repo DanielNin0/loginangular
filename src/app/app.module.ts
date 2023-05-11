@@ -7,13 +7,17 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 
 import { HttpClientModule } from "@angular/common/http";
 import { HeaderComponent } from './component/header/header.component';
+import { NuevoComponent } from './component/nuevo/nuevo.component';
+import { EditarComponent } from './component/editar/editar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     RoutingComponent,
-    HeaderComponent
+    HeaderComponent,
+    NuevoComponent,
+    EditarComponent
   ],
   imports: [
     BrowserModule,
