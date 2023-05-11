@@ -10,6 +10,9 @@ import { HeaderComponent } from './component/header/header.component';
 import { NuevoComponent } from './component/nuevo/nuevo.component';
 import { EditarComponent } from './component/editar/editar.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { EditarComponent } from './component/editar/editar.component';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent]

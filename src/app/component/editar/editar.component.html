@@ -1,7 +1,7 @@
 <div class="container">
     <h1>contenido</h1>
 
-    <form [formGroup]="editarform">
+    <form [formGroup]="editarform" (ngSubmit)="postform(editarform.value)">
 
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label fw-bolder text-white">Nombre</label>
@@ -37,6 +37,7 @@
         </div>
         
         <button type="submit" class="btn btn-sm btn-primary rounded-pill" >Guardar</button>
-        <button type="button" class="btn btn-sm btn-primary rounded-pill" >Cancelar</button>
+        <button type="button" class="btn btn-sm btn-danger rounded-pill" (click)="eliminar(editarform.value)">Eliminar</button>
+        <button type="button" class="btn btn-sm btn-warning rounded-pill" (click)="salir()">Salir</button>
     </form>
 </div>

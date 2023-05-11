@@ -4,6 +4,9 @@ import { PacienteI } from "../../models/paciente.interface";
 import { ApiService } from "../../service/api/api.service";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 
+import { ResponseI } from "../../models/response.interface";
+import { AlertasService } from "../../service/alertas/alertas.service";
+
 
 @Component({
   selector: 'app-editar',
@@ -12,7 +15,7 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 })
 export class EditarComponent {
 
-  constructor(private activerouter:ActivatedRoute, private router:Router, private api:ApiService){}
+  constructor(private activerouter:ActivatedRoute, private api:ApiService, private alertas:AlertasService, private router:Router){}
 
   datosPacientes!: PacienteI;
 
@@ -57,8 +60,33 @@ export class EditarComponent {
     return localStorage.getItem('token');
   }
 
-  postForm(form:PacienteI){
- 
-    console.log(form);
+  postform(form:any){
+    this.api.putPatients(form).subscribe(data=>{
+      let respuesta:ResponseI = data;
+      if (respuesta.status == "ok"){
+        this.alertas.showSuccess('Datos Modificados', 'Hecho')
+        this.router.navigate(['index']);
+      }else{
+        this.alertas.showError(respuesta.result.error_msg, 'Error');
+        
+      }
+    })
+  }
+
+  eliminar(form:any){
+    this.api.deletePatients(form).subscribe(data=>{
+      let respuesta:ResponseI = data;
+      if (respuesta.status == "ok"){
+        this.alertas.showSuccess('Paciente Eliminado', 'Datos Eliminados');
+        this.router.navigate(['index']);
+      }else{
+        this.alertas.showError(respuesta.result.error_msg, 'Error');
+        
+      }
+    })
+  }
+
+  salir(){
+    this.router.navigate(['index']);
   }
 }

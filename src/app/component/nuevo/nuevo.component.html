@@ -1,1 +1,42 @@
-<p>nuevo works!</p>
+<div class="container">
+    <h1>contenido</h1>
+
+    <form [formGroup]="nuevoForm" (ngSubmit)="postForm(nuevoForm.value)">
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label fw-bolder text-white">Nombre</label>
+            <input type="email" class="form-control form-control-sm input-login border-0" id="exampleInputEmail1" formControlName="nombre" placeholder="Ingresa el nombre">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label fw-bolder text-white">Correo</label>
+            <input type="email" class="form-control form-control-sm input-login border-0" id="exampleInputEmail1" formControlName="correo" placeholder="Ingresa el correo">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label fw-bolder text-white">DNI</label>
+            <input type="email" class="form-control form-control-sm input-login border-0" id="exampleInputEmail1" formControlName="dni" placeholder="Ingresa el DNI">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label fw-bolder text-white">Dirrecion</label>
+            <input type="email" class="form-control form-control-sm input-login border-0" id="exampleInputEmail1" formControlName="direccion" placeholder="Ingresa la direccion">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label fw-bolder text-white">C.P.</label>
+            <input type="email" class="form-control form-control-sm input-login border-0" id="exampleInputEmail1" formControlName="codigoPostal" placeholder="Ingresa el codigo postal">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label fw-bolder text-white">Fecha de Nacimiento</label>
+            <input type="email" class="form-control form-control-sm input-login border-0" id="exampleInputEmail1" formControlName="fechaNacimiento" placeholder="Ingresa la fecha de nacimiento">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label fw-bolder text-white">Genero</label>
+            <input type="email" class="form-control form-control-sm input-login border-0" id="exampleInputEmail1" formControlName="genero" placeholder="Ingresa el genero">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label fw-bolder text-white">Telefono</label>
+            <input type="email" class="form-control form-control-sm input-login border-0" id="exampleInputEmail1" formControlName="telefono" placeholder="Ingresa el Telefono">
+        </div>
+        
+        <button type="submit" class="btn btn-sm btn-primary rounded-pill" >Guardar</button>
+        <button type="button" class="btn btn-sm btn-warning rounded-pill" (click)="salir()">Salir</button>
+    </form>
+</div>
